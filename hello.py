@@ -1,1 +1,4 @@
-VimCrypt~03!WÓE2‘·äjß\Â@~£ÉL¥½Ê:Bó)ûùÙu±u±œ{ÏÎÊ…uBY–ª³Ç!NÅ+ÃYö$‘ˆØı‡ +¦ÑDÙ5¼qıÆàTŞù Z-°íbµíx7	EÄIGX#çÍˆïO²ÜUâ¼g,ÿ®© ¦
+print ("Hello World!")
+print ("Hello CS257")
+print ("if you won't need this, but the encryption key was 1234 yay.")
+
