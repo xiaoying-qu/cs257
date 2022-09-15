@@ -1,2 +1,1 @@
-print ("Hello World!")
-print ("Hello CS257!")
+VimCrypt~03!WÓE2‘·äjß\Â@~£ÉL¥½Ê:Bó)ûùÙu±u±œ{ÏÎÊ…uBY–ª³Ç!NÅ+ÃYö$‘ˆØý‡ž +¦ÑDÙ5¼qýÆàTÞù Z-°íbµíx7	EÄIGX#çÍˆïO²ÜUâ¼g,ÿ®© ¦
