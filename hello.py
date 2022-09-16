@@ -1,4 +1,4 @@
+#Code written by Kyle Machalec and Xiaoying Qu
 print ("Hello World!")
 print ("Hello CS257")
-print ("if you won't need this, but the encryption key was 1234 yay.")
-
+print ("You won't need this, but the encryption key was 1234 yay.")
