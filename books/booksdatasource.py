@@ -76,14 +76,14 @@ class Author:
         self.birth_year = birth_year
         self.death_year = death_year
         self.books = books
+        
+    def __str__(self):
+        return self.given_name + " " + self.surname
 
     def __eq__(self, other):
         ''' For simplicity, we're going to assume that no two authors have the same name. '''
         return self.surname == other.surname and self.given_name == other.given_name
 
-    # For sorting authors, you could add a "def __lt__(self, other)" method
-    # to go along with __eq__ to enable you to use the built-in "sorted" function
-    # to sort a list of Author objects.
 
     def __lt__(self, other):
         if self.surname == other.surname:
@@ -120,7 +120,7 @@ class BooksDataSource:
 
                 All Clear,2010,Connie Willis (1945-)
                 "Right Ho, Jeeves",1934,Pelham Grenville Wodehouse (1881-1975)
-
+                
             This __init__ method parses the specified CSV file and creates
             suitable instance variables for the BooksDataSource object containing
             a collection of Author objects and a collection of Book objects.

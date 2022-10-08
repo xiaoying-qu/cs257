@@ -2,14 +2,16 @@ Name
 	books - Ruben and Xiaoying's book searching program
 
 Synopsis
-	python3 books.py help
+	python3 books.py --help
 	python3 books.py title [-h|-t|-y] [string]
 	python3 books.py author [-h] [string]
 	python3 books.py year [-h] _ _|_ yearB|yearA _|yearA yearB
 
+	python3 books.py author --title
+
 Description
-	This is a program that will search through a CSV file to find and sort 
-	information. It can search for titles, authors, and dates of publication.
+	This is a program that searches through the database by titles, authors, and dates 
+	of publication. Prints out a list of books or authors.
 	
 	help
 		Prints usage.txt.
