@@ -76,7 +76,7 @@ class Author:
         self.birth_year = birth_year
         self.death_year = death_year
         self.books = books
-        
+
     def __str__(self):
         return self.given_name + " " + self.surname
 
@@ -98,6 +98,9 @@ class Book:
         self.title = title
         self.publication_year = publication_year
         self.authors = authors
+        
+    def __str__(self):
+        return self.title
 
     def __eq__(self, other):
         ''' We're going to make the excessively simplifying assumption that

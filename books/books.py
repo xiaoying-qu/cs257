@@ -10,21 +10,29 @@ import argparse
 def get_parsed_arguments():
     parser = argparse.ArgumentParser(description='Book search program that prints out a list of books or authors.')
     parser.add_argument('search_term1',choices =['title','author','year'],help='Search title/author name that contains this word or any book published before or during this year')
-    parser.add_argument('search_term2', nargs="?", help='Only when search in between year')
+    parser.add_argument('search_term2', nargs="*", help='Only when search in between year')
     parsed_arguments = parser.parse_args()
-
     return parsed_arguments
 
 def get_command_line(arguments,data_source):
     if arguments.search_term1.lower() == 'title':
         if arguments.search_term2:
             return data_source.books(arguments.search_term2)
+        return data_source.books()
     elif arguments.search_term1.lower() == 'author':
         if arguments.search_term2:
             return data_source.authors(arguments.search_term2)
+        return data_source.authors()
     elif arguments.search_term1.lower() == 'year':
-        return data_source.books_between_years(arguments.
-        search_term2[0],arguments.search_term[1])
+        if arguments.search_term2 == None:
+            return data_source.books_between_years()
+        elif len(arguments.search_term2) ==1:
+            return data_source.books_between_years(int(arguments.search_term2[0]))
+        else:
+            return data_source.books_between_years(int(arguments.search_term2[0]),int(arguments.search_term2[1]))
+    
+        
+
 
 
 def main():
