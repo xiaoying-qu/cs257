@@ -1,8 +1,6 @@
 # This program was written by Ruben Boero and Xiaoying Qu
-
-
 # This code was revised by Alex Falk, Carl Zhang, Aldo Polanco, and Yiming Xia
-# The code revision is done individually by Xiaoying Qu, adapted from 
+# The code revision is done individually by Xiaoying Qu
 
 import booksdatasource
 import argparse
@@ -30,10 +28,6 @@ def get_command_line(arguments,data_source):
             return data_source.books_between_years(int(arguments.search_term2[0]))
         else:
             return data_source.books_between_years(int(arguments.search_term2[0]),int(arguments.search_term2[1]))
-    
-        
-
-
 
 def main():
     arguments = get_parsed_arguments()
