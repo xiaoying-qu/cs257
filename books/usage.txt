@@ -42,12 +42,3 @@ General Flags
 	-h, --help
 		Prints the information about the specified command.
 	
-Title search specific flags
-	-t, --title
-		The list of books matching search string will be printed in order of book 
-		title.
-	
-	-y, --year
-		The list of books matching search string will be printed in order of 
-		publication year.	
-	

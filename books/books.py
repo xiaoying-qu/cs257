@@ -7,8 +7,8 @@ import argparse
 
 def get_parsed_arguments():
     parser = argparse.ArgumentParser(description='Book search program that prints out a list of books or authors.')
-    parser.add_argument('search_term1',choices =['title','author','year'],help='Search title/author name that contains this word or any book published before or during this year')
-    parser.add_argument('search_term2', nargs="*", help='Only when search in between year')
+    parser.add_argument('search_term1',choices =['title','author','year'],help= 'Choose to specify the search term')
+    parser.add_argument('search_term2', nargs="*", help='Optional, only when there is a or multiple second serach term(s)')
     parsed_arguments = parser.parse_args()
     return parsed_arguments
 
