@@ -5,8 +5,11 @@ A program that reads the Kaggle CSV files and write on CSV file for each of the 
 '''
 
 import csv
+from itertools import zip_longest
+
 
 athletes = {}
+athletes_info=[]
 with open('athlete_events.csv','r') as file,\
         open('athletes.csv', 'w') as athletes_file:
         reader = csv.reader(file)
@@ -17,20 +20,27 @@ with open('athlete_events.csv','r') as file,\
             athlete_id = row[0]
             athlete_name = row[1]
             athlete_sex = row[2]
-            athlete_age = "?" if 'NA' == row[3] else (row[3])
-            athlete_height = "?" if 'NA'== row[4] else (row[4])
-            athlete_weight = "?" if 'NA'== row[5] else (row[5])
+            athlete_age = 0 if 'NA' == row[3] else round(float(row[3]))
+            athlete_height = 0 if 'NA'== row[4] else round(float(row[4]))
+            athlete_weight = 0 if 'NA'== row[5] else round(float(row[5]))
+            events_name = row[13]
+            events_name = events_name.replace(',','')
             athlete_sport = row[12]
-
+          
+            #l= []
             if athlete_id not in athletes:
                 athletes[athlete_id] = athlete_name
-
-                writer.writerow([athlete_id, athlete_name, athlete_sex, athlete_age, athlete_height, \
+                #l=[athlete_id, athlete_name, athlete_sex, athlete_age, athlete_height,
+                    #athlete_weight, athlete_sport]
+                writer.writerow([athlete_id, athlete_name, athlete_sex, athlete_age, athlete_height,
                     athlete_weight, athlete_sport])
 
-            medals = f"{row[8]}{row[13]} {row[14]}"
-            writer.writerow([medals])
-
+            #medals = f"{row[8]}{events_name} {row[14]}"
+            #l+=[medals]
+            #athletes_info.append(l)
+            #for item in athletes_info:
+            
+        
          
 # have a count variable
 
@@ -95,5 +105,37 @@ with open('athlete_events.csv') as file,\
             team_id = count
             teams.add(team)
             teams.add(noc)
-            writer.writerow([team_id, noc, team])
+            writer.writerow([team_id,team,noc])
             count+=1
+
+medals = {}
+medals = set()
+with open('athlete_events.csv') as file,\
+        open('medals.csv', 'w') as teams_file:
+    reader = csv.reader(file)
+    writer = csv.writer(teams_file)
+    next(reader)
+    count = 1
+    for row in reader:
+        if row[14] != 'NA':
+            medal_id = count
+            medals.add(medal_id)
+            medal = row[14]
+            medals.add(medal)
+            game = row[8]
+            medals.add(game)
+            owner = row[1]
+            medals.add(owner)
+            team = row[6]
+            medals.add(team)
+            event = row[13]
+            medals.add(event)
+            writer.writerow([medal_id,medal,game,owner,team,event])
+            count+=1
+
+            
+
+        
+        
+
+
