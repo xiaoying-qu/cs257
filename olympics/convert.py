@@ -5,137 +5,92 @@ A program that reads the Kaggle CSV files and write on CSV file for each of the 
 '''
 
 import csv
-from itertools import zip_longest
 
-
-athletes = {}
-athletes_info=[]
-with open('athlete_events.csv','r') as file,\
-        open('athletes.csv', 'w') as athletes_file:
-        reader = csv.reader(file)
-        writer = csv.writer(athletes_file)
-        # skip the header
-        next(reader)
-        for row in reader:
-            athlete_id = row[0]
-            athlete_name = row[1]
-            athlete_sex = row[2]
-            athlete_age = 0 if 'NA' == row[3] else round(float(row[3]))
-            athlete_height = 0 if 'NA'== row[4] else round(float(row[4]))
-            athlete_weight = 0 if 'NA'== row[5] else round(float(row[5]))
-            events_name = row[13]
-            events_name = events_name.replace(',','')
-            athlete_sport = row[12]
-          
-            #l= []
-            if athlete_id not in athletes:
-                athletes[athlete_id] = athlete_name
-                #l=[athlete_id, athlete_name, athlete_sex, athlete_age, athlete_height,
-                    #athlete_weight, athlete_sport]
-                writer.writerow([athlete_id, athlete_name, athlete_sex, athlete_age, athlete_height,
-                    athlete_weight, athlete_sport])
-
-            #medals = f"{row[8]}{events_name} {row[14]}"
-            #l+=[medals]
-            #athletes_info.append(l)
-            #for item in athletes_info:
-            
-        
-         
-# have a count variable
-
-olymic_games = {}
-olymic_games = set()
-with open('athlete_events.csv') as file,\
-        open('olympic_games.csv', 'w') as olymic_games_file:
-    reader = csv.reader(file)
-    writer = csv.writer(olymic_games_file)
-    # id, year, city, season
+athletes = {} # maps (name, sex) --> id
+games = {} # maps (city, year, season) --> integer id
+teams = {} #maps (country, abbrev) --> id
+sports = {} #maps (sport) --> id
+events = {} #maps (event) --> id
+with open('athlete_events.csv') as input_file,\
+        open('event_results.csv', 'w') as event_results_file:
+    reader = csv.reader(input_file)
     next(reader)
-    count = 1
+    event_results_writer = csv.writer(event_results_file)
     for row in reader:
-        game = row[8]
-        game_year = row[9]
-        game_season = row[10]
-        game_city = row[11]
+        athlete_id = row[0]
+        athlete_name = row[1]
+        athlete_sex = row[2]
+        key = (athlete_name, athlete_sex)
+        if key not in athletes:
+            athletes[key] = athlete_id
+    
+        country = row[6]
+        abbrev = row[7]
+        key = (country, abbrev)
+        if key not in teams:
+            teams[key] = len(teams) + 1
+        teams_id = teams[key]
+
+        year = row[9]
+        season = row[10]
+        city = row[11]
+        key = (city, year, season)
+        if key not in games:
+            games[key] = len(games) + 1
+        games_id = games[key]
+
+        sport = row[12]
+        key = sport
+        if key not in sports:
+            sports[key] = len(sports) + 1
+        sports_id = sports[key]
         
-        if game not in olymic_games:
-            game_id = count
-            olymic_games.add(game)
-            olymic_games.add(game_year)
-            olymic_games.add(game_season)
-            olymic_games.add(game_city)
-            writer.writerow([game_id, game, game_year, game_season, game_city])
-            count+=1
-            
-            
+        event = row[13]
+        event = event.replace(',','')
+        key = event
+        if key not in events:
+            events[key] = len(events) + 1
+        events_id = events[key]
+    
+        medal = row[14]
+        
+        # HERE: we have in hand an athlete_id and a games_id
+        # so we could write to the event_results csv.writer
+        athlete_age = row[3]
+        athlete_age = 0 if athlete_age == 'NA' else int(round(float(athlete_age)))
+        athlete_height = row[4]
+        athlete_height = 0 if athlete_age == 'NA' else int(round(float(athlete_age)))
+        athlete_weight = row[5]
+        athlete_weight = 0 if athlete_age == 'NA' else int(round(float(athlete_age)))
+        event_results_writer.writerow([athlete_id, athlete_age, athlete_height,\
+        athlete_weight,games_id, teams_id, events_id, sports_id, medal])
+with open('athletes.csv','w') as athletes_file:
+    writer = csv.writer(athletes_file)
+    for (athlete_name, athlete_sex) in athletes:
+        athletes_id = athletes[(athlete_name,athlete_sex)]
+        writer.writerow([athletes_id,athlete_name,athlete_sex])
 
+with open('games.csv', 'w') as games_file:
+    writer = csv.writer(games_file)
+    for (city, year, season) in games:
+        games_id = games[(city, year, season)]
+        writer.writerow([games_id, city, year, season])
 
-events = {}
-# create an events set 
-events = set()
-with open('athlete_events.csv') as file,\
-        open('events.csv', 'w') as events_file:
-    reader = csv.reader(file)
+with open('teams.csv', 'w') as teams_file:
+    writer = csv.writer(teams_file)
+    for (country, abbrev ) in teams:
+        teams_id = teams[(country, abbrev)]
+        writer.writerow([teams_id,country,abbrev])
+        
+with open('sports.csv','w') as sports_file:
+    writer = csv.writer(sports_file) 
+    for (sport) in sports:
+        sports_id =sports[sport] 
+        writer.writerow([sports_id,sport])
+       
+
+with open('events.csv','w') as events_file:
     writer = csv.writer(events_file)
-    next(reader)
-    count = 1
-    for row in reader:
-        events_name = row[13]
-        events_name = events_name.replace(',','')
-
-        if events_name not in events:
-            events_id = count
-            events.add(events_name)
-            writer.writerow([events_id, events_name])
-            count+=1
-
-teams = {}
-teams = set()
-with open('athlete_events.csv') as file,\
-        open('teams.csv', 'w') as teams_file:
-    reader = csv.reader(file)
-    writer = csv.writer(teams_file)
-    next(reader)
-    count = 1
-    for row in reader:
-        team = row[6]
-        noc = row[7]
-        if team not in teams:
-            team_id = count
-            teams.add(team)
-            teams.add(noc)
-            writer.writerow([team_id,team,noc])
-            count+=1
-
-medals = {}
-medals = set()
-with open('athlete_events.csv') as file,\
-        open('medals.csv', 'w') as teams_file:
-    reader = csv.reader(file)
-    writer = csv.writer(teams_file)
-    next(reader)
-    count = 1
-    for row in reader:
-        if row[14] != 'NA':
-            medal_id = count
-            medals.add(medal_id)
-            medal = row[14]
-            medals.add(medal)
-            game = row[8]
-            medals.add(game)
-            owner = row[1]
-            medals.add(owner)
-            team = row[6]
-            medals.add(team)
-            event = row[13]
-            medals.add(event)
-            writer.writerow([medal_id,medal,game,owner,team,event])
-            count+=1
-
-            
-
-        
-        
-
-
+    for (event) in events:
+        events_id = events[event]     
+        writer.writerow([events_id,event])    
