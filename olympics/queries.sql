@@ -21,15 +21,12 @@ ORDER BY
 --List all the medals won by Greg Louganis, sorted by year. Include whatever fields in this output that you think appropriate.
 
 
-SELECT 
-    athletes.name, games.year, event_results.games_id, event_results.athlete_id, event_results.medal
-FROM athletes,games, event_results
-
-WHERE athletes.name = 'Gregory Efthimios "Greg" Louganis'
-AND athletes.id = event_results.athlete_id
-AND event_results.medal LIKE 'Gold%' OR event_results.medal LIKE 'Silver%'
-OR event_results.medal LIKE 'Bronze%'
-
+SELECT event_results.medal, events.name, games.year
+FROM event_results, events, games
+WHERE event_results.events_id = events.id 
+AND event_results.medal != 'NA'
+AND games.id = event_results.games_id 
+AND event_results.athlete_id=71665
 ORDER BY games.year;
 
 
