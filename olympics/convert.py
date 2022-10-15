@@ -11,6 +11,7 @@ games = {} # maps (city, year, season) --> integer id
 teams = {} #maps (country, abbrev) --> id
 sports = {} #maps (sport) --> id
 events = {} #maps (event) --> id
+
 with open('athlete_events.csv') as input_file,\
         open('event_results.csv', 'w') as event_results_file:
     reader = csv.reader(input_file)
@@ -53,17 +54,20 @@ with open('athlete_events.csv') as input_file,\
         events_id = events[key]
     
         medal = row[14]
+
         
         # HERE: we have in hand an athlete_id and a games_id
         # so we could write to the event_results csv.writer
         athlete_age = row[3]
         athlete_age = 0 if athlete_age == 'NA' else int(round(float(athlete_age)))
         athlete_height = row[4]
-        athlete_height = 0 if athlete_age == 'NA' else int(round(float(athlete_age)))
+        athlete_height = 0 if row[4] == 'NA' else int(round(float(row[4])))
         athlete_weight = row[5]
-        athlete_weight = 0 if athlete_age == 'NA' else int(round(float(athlete_age)))
+        athlete_weight = 0 if row[5] == 'NA' else int(round(float(row[5])))
         event_results_writer.writerow([athlete_id, athlete_age, athlete_height,\
         athlete_weight,games_id, teams_id, events_id, sports_id, medal])
+
+        
 with open('athletes.csv','w') as athletes_file:
     writer = csv.writer(athletes_file)
     for (athlete_name, athlete_sex) in athletes:

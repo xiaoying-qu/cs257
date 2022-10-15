@@ -1,14 +1,14 @@
 CREATE TABLE athletes(
     id SERIAL,
     name text,
-    sex text,
+    sex text
 );
     
 CREATE TABLE games(
     id SERIAL,
+    city text,
     year integer,
-    season text,
-    city text
+    season text
 );
 
 CREATE TABLE events(
@@ -21,6 +21,7 @@ CREATE TABLE teams(
     country text,
     abbrev text
 );
+
 CREATE TABLE sports(
     id SERIAL,
     name text
@@ -36,4 +37,4 @@ CREATE TABLE event_results (
         events_id INTEGER,
         sports_id INTEGER,
         medal TEXT
-    );
+);
