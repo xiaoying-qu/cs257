@@ -11,7 +11,10 @@ games = {} # maps (city, year, season) --> integer id
 teams = {} #maps (country, abbrev) --> id
 sports = {} #maps (sport) --> id
 events = {} #maps (event) --> id
-
+medal_count = {} #maps number of medals won for each team
+gold = 0
+silver = 0
+bronze = 0
 with open('athlete_events.csv') as input_file,\
         open('event_results.csv', 'w') as event_results_file:
     reader = csv.reader(input_file)
@@ -55,6 +58,18 @@ with open('athlete_events.csv') as input_file,\
     
         medal = row[14]
 
+        if abbrev not in medal_count:
+            medal_count[abbrev] = [gold, silver, bronze]
+        else:
+            prev_gold = medal_count[abbrev][0]
+            prev_silver = medal_count[abbrev][1]
+            prev_bronze = medal_count[abbrev][2]
+            if row[14] == 'Gold':
+                medal_count[abbrev] = [prev_gold + 1, prev_silver, prev_bronze]
+            elif row[14] == 'Silver':
+                medal_count[abbrev] = [prev_gold, prev_silver + 1, prev_bronze]
+            elif row[14] == 'Bronze':
+                medal_count[abbrev] = [prev_gold, prev_silver, prev_bronze + 1]
         
         # HERE: we have in hand an athlete_id and a games_id
         # so we could write to the event_results csv.writer
@@ -98,3 +113,9 @@ with open('events.csv','w') as events_file:
     for (event) in events:
         events_id = events[event]     
         writer.writerow([events_id,event])    
+
+with open ('medal_count.csv', 'w') as medal_count_file:
+    writer = csv.writer(medal_count_file)
+    for key in medal_count:
+        writer.writerow([key, medal_count[key][0], medal_count[key][1], medal_count[key][2]])
+

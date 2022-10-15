@@ -36,6 +36,6 @@ ORDER BY games.year;
 --List all the NOCs and the number of gold medals they have won, in decreasing order of the number of gold medals.
 
 
-SELECT medal_count.noc_id, medal_count.gold
+SELECT medal_count.abbrev, medal_count.gold
 FROM medal_count
 ORDER BY medal_count.gold;
