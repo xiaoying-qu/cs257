@@ -1,0 +1,25 @@
+NAME
+    olympics.py - a python program that returns psql searches for user from database 'olympics'
+SYNOPSIS
+    python3 olympics.py -h | --help
+    python3 olympics.py athletes -NOC 
+    python3 olympics.py noc_gold
+    python3 olympics.py summer_2008_gold
+
+DESCRIPTION
+    -h | --help
+        Display this message.
+    
+    athletes - NOC
+        Prints a list of all athletes sorted by a given NOC abbreviation. If no 
+		NOC is provided, no athletes will be printed. Search term is case
+		insensitive.
+	
+	noc_gold
+		Prints a list of all the NOCs and the number of gold medals they have won.
+		Sorted in decreasing order by number of medals.
+	
+	summer_2008_gold
+		Prints a list of names of all the athletes who won a gold medal in summer 2008. 
+                Sorted in decreasing order alphabatically by athletes' name.
+
