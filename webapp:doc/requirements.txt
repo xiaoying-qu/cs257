@@ -1,0 +1,7 @@
+# Requirements.txt
+
+# Written by Yiming Xia and Xiaoying Qu
+
+STORY: Any car buyer who cares about fuel efficiency and wants to buy a vehicle built in 2022 can get a list of all the cars with certain features, so they can compare the fuel consumption in city and highway for those cars.
+
+IMPLEMENTATION:
