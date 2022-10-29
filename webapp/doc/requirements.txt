@@ -11,7 +11,7 @@ STORY: Any car buyer who cares about fuel efficiency and wants to buy a vehicle 
 
 IMPLEMENTATION: we will have a menu with all the columns as sort parameters, each sort parameter has options of its own. For example, one sort parameter might be fuel consumption. The options for the fuel consumption field are city fuel (lowest to highest), city fuel (highest to lowest), highway fuel (low to high), highway fuel (high to low). These sort parameters can be applied individually, which means you can sort with two or more fields at once.
 
-In this customer’s case, he can select the fuel consumption sort parameter and select city fuel (lowest to highest) option, this will give him a list of all the car models sorted from low to high by fuel consumption. If the customer is looking for other characteristics from car models he can apply more sort parameters to his search to find the car that best suited him.
+In this customer’s case, he can select the fuel consumption sort parameter and select city fuel (lowest to highest) option, this will give him a list of all the car models sorted from low to high by fuel consumption. If the customer is looking for other characteristics such as engine size or fuel type, he can apply more sort parameters to his search to find the car that best suited him.
 
 
 
