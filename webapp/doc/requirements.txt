@@ -1,0 +1,41 @@
+# Requirements.txt
+
+# Written by Yiming Xia and Xiaoying Qu
+
+
+
+
+
+
+STORY: Any car buyer who cares about fuel efficiency and wants to buy a vehicle built in 2022 can get a list of all the cars with certain features, so they can compare the fuel consumption in city and highway for those cars.
+
+IMPLEMENTATION: we will have a menu with all the columns as sort parameters, each sort parameter has options of its own. For example, one sort parameter might be fuel consumption. The options for the fuel consumption field are city fuel (lowest to highest), city fuel (highest to lowest), highway fuel (low to high), highway fuel (high to low). These sort parameters can be applied individually, which means you can sort with two or more fields at once.
+
+In this customer’s case, he can select the fuel consumption sort parameter and select city fuel (lowest to highest) option, this will give him a list of all the car models sorted from low to high by fuel consumption. If the customer is looking for other characteristics from car models he can apply more sort parameters to his search to find the car that best suited him.
+
+
+
+
+
+
+STORY: volvo fan trying to convince his friend why volvo vehicles are more fuel efficient than BMW in general. He needs concrete evidence to support his claim.
+
+IMPLEMENTATION: The same as the first implementation, we think this way of searching can cover most of the user’s needs.
+
+
+
+
+
+
+STORY: Audi product manager who wants to come up with a new vehicle model that’s more fuel efficient than any competitors on the market, he wants to know what is the maximum fuel consumption of the new model.
+
+IMPLEMENTATION: The same as the first two.
+
+
+
+
+
+
+STORY: Car owner who suspects his neighbors have been stealing his gas, he wants to look up the city fuel consumption of his car model from our website and compare it to his gas money to make sure.
+
+IMPLEMENTATION: We will have a search bar that the user can use to search for specific car models. From this search bar the user will be directed to one of our specific car pages and get the parameters of that particular car model.
