@@ -1,0 +1,117 @@
+/* HEADINGS AND PARAGRAPHS */
+
+p {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+
+
+
+
+/* BACKGROUND */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/cars.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+/* SEARCH_BAR */
+
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 6px 4px;
+    font-size: 10px;
+    color: #cac7ff;
+    width: 90%;
+}
+
+::placeholder{
+    color: white;
+    width: 90%;
+}
+
+.search-bar button img {
+    width: 10px;
+    float: right;
+}
+
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: #58629b;
+    cursor: pointer;
+    float: right;
+}
+
+
+
+
+
+/* DROP_DOWN_MENU */
+
+.container ul {
+    float: left;
+    width: 100%;
+}
+.container ul li {
+    float: left;
+    list-style: none;
+    position: relative;
+    line-height: 10px;
+    padding: 0.1px 40px;
+    background-color: rgb(50, 38, 178);
+}
+.container ul li a{
+    display: block;
+    padding: 24px 14px
+}
+.container ul li ul {
+    display: none;
+    position: absolute;
+    background-color: black;
+    padding: 1px;
+}
+.container ul li:hover ul {
+    display: block;
+}
+.container ul li ul li a:hover {
+    background-color: grey;
+}
+
+
+
+
+
+/* CAR_LIST */
+.carlist{
+    position: relative;
+    background-color: pink;
+    width: 50%;
+}
