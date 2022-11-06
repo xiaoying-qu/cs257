@@ -1,0 +1,41 @@
+# written by Yiming Xia and Xiaoying Qu
+# API design
+
+SEARCH BAR:
+REQUEST: /model?model_contains={search_text}
+
+RESPONSE: a JSON dictionary that represents one car model. The dictionary will have the following fields:
+Make -- (string) the make of this car model (brand)	Vehicle_class -- (string) the vehicle class of this car model
+Engine_size -- (int) size of engine
+Cylinder -- (int) how many cylinder
+Fuel_type -- (chr) X,Z,D,E stands for different types of fuel
+Fuel_consumption_city -- (int) fuel consumption in city for this model
+Fuel_consumption_hwy -- (int) fuel consumption on highway for this model
+Fuel_consumption_comb -- (int) total fuel consumption for this model
+Co2_rating -- (int) how co2 efficient is this model
+Smong_rating -- (int) how smog efficient is this model
+
+EXAMPLE: /model?model_contains=MDX
+{"make": "Acura", "vehicle_class": "SUV:small", "Engine_size": "3.5", "Cylinders": "6", "Fuel_type": "Z", "Fuel_consumption_city": "12.6", "Fuel_consumption_hwy": "9.4", "Fuel_consumption_comb": "11.2", "co2_emission": "263", "co2_rating": "4", "smog_rating": "5"}
+
+
+
+DROPDOWN MENU:
+REQUEST: /co2
+REQUEST: /fuel_consumption
+REQUEST: /engine_size
+REQUEST: /co2&fuel_consumption
+REQUEST: /co2&engine_size
+REQUEST: /fuel_consumption&engine_size
+REQUEST: /co2&fuel_consumption&engine_size
+ 
+RESPONSE: a JSON list of cars ordered by the parameters specified above. (e.g. /co2/engine_size would return a list of cars ordered by both co2 rating and engine size.)
+
+EXAMPLE: /co2/fuel_consumption
+[ILX, MDX, RDX, TLX, Giulia, A3 Sedan……]
+
+
+
+
+
+………
