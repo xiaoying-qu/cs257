@@ -95,7 +95,8 @@ body {
 }
 .container ul li a{
     display: block;
-    padding: 24px 14px
+    padding: 24px 14px;
+    color: white;
 }
 .container ul li ul {
     display: none;
