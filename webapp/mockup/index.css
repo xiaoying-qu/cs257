@@ -13,44 +13,81 @@ h2 {
     color: white;
 }
 
-
-
-
-
-/* BACKGROUND */
-
-body {
-    width: 100%;
-    min-height: 100vh;
-    padding: 5%;
-    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/cars.jpg);
-    background-position: center;
-    background-size: cover;
+.logo {
+    position: relative;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.container{
+    width: 80%;
+    size-adjust: auto;
+    margin: 3 auto;
 }
 
 
 
+header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+nav{
+    text-align:center;
+    margin-top: 60px;
+    color:aliceblue;
+    font-size: 55px;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+
+}
+nav a{
+    text-decoration: none;
+}
+/* BACKGROUND */
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(100, 191, 90, 0.9),rgba(14, 27, 9, 0.9));
+    background-position: center;
+    background-size: cover;
+}
+
+.logo{ 
+	position:fixed; 
+	top:0; 
+	left:0; 
+} 
 
 /* SEARCH_BAR */
 
 .search-bar {
     width: 100%;
     max-width: 700px;
-    background: rgba(255, 255, 255, 0.2);
     align-items: center;
-    border-radius: 60px;
+    border-radius: 500px;
     padding: 10px 20px;
 
 }
+
 
 .search-bar input {
     background: transparent;
     flex: 1;
     border: 0;
-    outline: none;
+    outline:rgba(14, 27, 9, 0.9);
     padding: 6px 4px;
-    font-size: 10px;
+    font-size: 30px;
     color: #cac7ff;
     width: 90%;
 }
@@ -61,16 +98,16 @@ body {
 }
 
 .search-bar button img {
-    width: 10px;
+    width: 30px;
     float: right;
 }
 
 .search-bar button{
     border: 0;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    background: #58629b;
+    width: 50px;
+    height: 50px;
+    
     cursor: pointer;
     float: right;
 }
@@ -80,6 +117,7 @@ body {
 
 
 /* DROP_DOWN_MENU */
+
 
 .container ul {
     float: left;
@@ -91,7 +129,6 @@ body {
     position: relative;
     line-height: 10px;
     padding: 0.1px 40px;
-    background-color: rgb(50, 38, 178);
 }
 .container ul li a{
     display: block;
