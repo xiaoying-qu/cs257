@@ -7,12 +7,9 @@
 window.onload = initialize;
 
 function initialize() {
-    loadAuthorsSelector();
+    var button = document.getElementById("peopleButton");
+    button.onclick = showPeople;
 
-    let element = document.getElementById('author_selector');
-    if (element) {
-        element.onchange = onAuthorsSelectionChanged;
-    }
 }
 
 // Returns the base URL of the API, onto which endpoint
@@ -25,7 +22,7 @@ function getAPIBaseURL() {
     return baseURL;
 }
 
-function loadAuthorsSelector() {
+function showPeople() {
     let url = getAPIBaseURL() + '/people/';
 
     // Send the request to the books API /authors/ endpoint
@@ -39,16 +36,13 @@ function loadAuthorsSelector() {
     // an HTML table displaying the author names and lifespan.
     .then(function(people) {
         // Add the <option> elements to the <select> element
-        let selectorBody = '';
-        for (let k = 0; k < people.length; k++) {
-            let people = people[k];
-            selectorBody += people['id'] + people['name'] + ', ' + people['age'];
+        peoplebody = '';
+        for (var k = 0; k<people.length; k++) {
+            var person = people[k];
+            peoplebody += person.id + person.name + '\n';
         }
-
-        let selector = document.getElementById('people_table');
-        if (selector) {
-            selector.innerHTML = selectorBody;
-        }
+        var peoplelist = document.getElementById("peopleList")
+        peoplelist.innerHTML = peoplebody;
     })
 
     // Log the error if anything went wrong during the fetch.

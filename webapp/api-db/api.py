@@ -21,8 +21,8 @@ def get_connection():
                             user=config.user,
                             password=config.password)
 
-@api.route('/people') 
-def get_people():
+@api.route('/people/') 
+def get_people ():
     ''' Returns a list of all the authors in our database. See
         get_author_by_id below for description of the author
         resource representation.
@@ -39,8 +39,9 @@ def get_people():
     people_list = []
     try:
         connection = get_connection()
-        cursor = connection.cursor()
+        cursor = connection.cursor() 
         cursor.execute(query)
+        print(cursor.query)
         for row in cursor:
             people = {'id':row[0],
                       'name':row[1],
@@ -50,7 +51,6 @@ def get_people():
         connection.close()
     except Exception as e:
         print(e, file=sys.stderr)
+
     return json.dumps(people_list)
-
-
 

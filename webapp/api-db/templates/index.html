@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='books.css') }}" />
-    <script type="text/javascript" src="{{ url_for('static', filename='books.js') }}" ></script>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='books.css') }}"
+    /> -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='books.js') }}"
+    ></script>
     <title>CS 257: Software Design</title>
-</head>
+  </head>
 
-<body>
-    <p><table id="people_table"></table></p>
-</body>
+  <body>
+    <h1>CS 257</h1>
+    <button id="peopleButton">GIVE ME PEOPLE</button>
+    <p id="peopleList"></p>
+  </body>
 </html>
