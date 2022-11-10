@@ -1,8 +1,6 @@
-/*
- * books.js
- * Jeff Ondich, 27 April 2016
- * Updated, 5 November 2020
- */
+// CS257 end-to-end assignment
+// written by Xiaoying QU and Yiming Xia
+// 11.9.2022
 
 window.onload = initialize;
 

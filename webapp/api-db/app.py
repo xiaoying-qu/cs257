@@ -1,11 +1,8 @@
-'''
-    app.py
-    Jeff Ondich, 25 April 2016
-    Updated 8 November 2021
+# CS257 end-to-end assignment
+# written by Xiaoying QU and Yiming Xia
+# 11.9.2022
 
-    A small Flask application that provides a barelywebsite with an accompanying
-    API (which is also tiny) to support that website.
-'''
+
 import flask
 import argparse
 import api
