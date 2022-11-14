@@ -1,0 +1,86 @@
+/* CS257 mockup */
+/* Written by Yiming Xia and Xiaoying Qu */
+/* 11.3.2022 */
+
+
+
+
+
+/* ALL */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADINGS AND PARAGRAPHS */
+
+p {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+
+
+
+
+/* BACKGROUND */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    /* background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/cars.jpg); */
+    background-color: beige;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+/* DROP_DOWN_MENU */
+
+.container1 {
+    float: left;
+    background-color: green;
+    height: 600px;
+    /* width: 105px; */
+    /* border: 5px white; */
+}
+.container1 li {
+    float: left;
+    list-style: none;
+    position: relative;
+    left: 0px;
+    line-height: 10px;
+    /* width: 105px; */
+    /* padding: 0.1px 40px; */
+    font-size: 14px;
+    background-color: red;
+    word-wrap: break-word;
+}
+.container1 li a{
+    display: block;
+    padding: 12px 1px;
+    color: white;
+}
+
+
+
+
+
+/* CARLIST */
+
+.container2 {
+    float: left;
+    width: 100%;
+    background-color: purple;
+    height:600px;
+    width: 400px;
+    border: 10px black;
+}

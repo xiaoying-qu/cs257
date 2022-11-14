@@ -1,0 +1,28 @@
+<!-- CS257 mockup -->
+<!-- Written by Yiming Xia and Xiaoying Qu -->
+<!-- 11.3.2022 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../static/search.css" />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='carsSearch.js') }}"
+    ></script>
+  </head>
+
+  <body>
+    <!-- website_name -->
+    <h2>Hungry Cars</h2>
+    <!-- instructions -->
+    <p>type the car model you want to search</p>
+    <!-- search_bar -->
+    <div class="search-bar">
+      <input type="text" id="searchString" placeholder="Search..." />
+      <button id="searchButton">B</button>
+    </div>
+    <p id="carlist_by_make"></p>
+  </body>
+</html>

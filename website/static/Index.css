@@ -1,0 +1,59 @@
+/* CS257 mockup */
+/* Written by Yiming Xia and Xiaoying Qu */
+/* 11.3.2022 */
+
+
+
+
+
+/* ALL */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADINGS AND PARAGRAPHS */
+
+p {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+
+
+
+
+/* BACKGROUND */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/cars.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container button{
+    padding: 10px;
+    border-radius: 60px;
+}

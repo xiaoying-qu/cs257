@@ -1,0 +1,32 @@
+<!-- CS257 mockup -->
+<!-- Written by Yiming Xia and Xiaoying Qu -->
+<!-- 11.3.2022 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../static/sort.css" />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='carsSort.js') }}"
+    ></script>
+  </head>
+
+  <body>
+    <!-- website_name -->
+    <h2>Hungry Cars</h2>
+    <p>Move the mouse over the button to open the dropdown menu.</p>
+    <!-- drop_down_menu -->
+    <div class="container1">
+      <li>
+        <a href="#" id="fuel_consumption">fuel_consumption</a>
+        <a href="#">co2</a>
+      </li>
+    </div>
+    <!-- carlist -->
+    <div class="container2">
+      <p id="car_fuel_list"></p>
+    </div>
+  </body>
+</html>
