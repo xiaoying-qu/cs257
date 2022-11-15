@@ -16,6 +16,11 @@ def get_connection():
                             user=config.user,
                             password=config.password)
 
+@api.route('/help')
+def get_help():
+    return flask.send_file('.' + flask.url_for('static', filename='api-design.txt'), mimetype='text')
+
+
 @api.route('/fuel_consumption/') 
 def get_car_fuel ():
     query = '''SELECT modeltable.model, modeltable.make, fueltable.consumption_comb, linkstable.linkid
