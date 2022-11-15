@@ -7,7 +7,19 @@ GET parameters
     model (Required) -- returns a list of car name with
                         reference link to the specific car model.
                         The input is a string.
-RESPONSE: a
+RESPONSE: a JSON list of dictionaries, each of which represents one
+                    vehicle, sorted alphabetically by the vehicle's make.
+
+    make -- (TEXT) the make of the vehicle
+    model -- (TEXT) the model of the vehicle
+    co2 -- (DOUBLE PRECISION) the co2 emission data of the vehicle
+    linksID -- (INTEGER) linkID of car model table to other table in the database
+
+EXAMPLE:
+    /search/LX
+    
+
+EXAMPLE:
 
 REQUEST: /model?model_contains={search_text}
 
