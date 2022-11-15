@@ -38,7 +38,7 @@ function showCars() {
         carlist = '';
         for (var k = 0; k<cars.length; k++) {
             var car = cars[k];
-            carlist += car.model + '     ' + car.make + '     ' + car.co2 + '<br>';
+            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.co2_emission + '</a>' + '<br>';
         }
         var carlist_by_make = document.getElementById("carlist_by_make")
         carlist_by_make.innerHTML = carlist;
