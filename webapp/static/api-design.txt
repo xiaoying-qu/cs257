@@ -7,6 +7,7 @@ GET parameters
     model (Required) -- returns a list of car name with
                         reference link to the specific car model.
                         The input is a string.
+<<<<<<< HEAD:webapp/api-design.txt
 RESPONSE: a JSON list of dictionaries, each of which represents one
                     vehicle, sorted alphabetically by the vehicle's make.
 
@@ -21,6 +22,9 @@ EXAMPLE:
     
 
 EXAMPLE:
+=======
+RESPONSE: a
+>>>>>>> ba10394b11e84c7d47737f8e6dd6825a174fac9d:webapp/static/api-design.txt
 
 REQUEST: /model?model_contains={search_text}
 

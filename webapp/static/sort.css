@@ -46,7 +46,7 @@ body {
 
 .container1 {
     float: left;
-    background-color: green;
+    /* background-color: rgb(0, 179, 255); */
     height: 600px;
     /* width: 105px; */
     /* border: 5px white; */
@@ -60,7 +60,7 @@ body {
     /* width: 105px; */
     /* padding: 0.1px 40px; */
     font-size: 14px;
-    background-color: red;
+    background-color: rgb(38, 0, 255);
     word-wrap: break-word;
 }
 .container1 li a{
@@ -78,7 +78,7 @@ body {
 .container2 {
     float: left;
     width: 100%;
-    background-color: purple;
+    /* background-color: rgb(1, 255, 60); */
     height:600px;
     width: 400px;
     border: 10px black;
