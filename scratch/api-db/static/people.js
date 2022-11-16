@@ -37,7 +37,7 @@ function showPeople() {
         peoplebody = '';
         for (var k = 0; k<people.length; k++) {
             var person = people[k];
-            peoplebody += person.id + person.name + '\n';
+            peoplebody += person.id + ' ' + person.name + ' ' + person.age + '<br>';
         }
         var peoplelist = document.getElementById("peopleList")
         peoplelist.innerHTML = peoplebody;
