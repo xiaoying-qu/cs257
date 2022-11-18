@@ -22,6 +22,10 @@ def search():
 def sort():
     return flask.render_template('sort.html')
 
+@app.route('/help')
+def get_help():
+    return flask.send_file('.' + flask.url_for('static', filename='api-design.txt'), mimetype='text')
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('A books-and-authors application, including API & DB')

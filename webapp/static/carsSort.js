@@ -37,10 +37,10 @@ function showFuelCars() {
     // an HTML table displaying the author names and lifespan.
     .then(function(cars) {
         // Add the <option> elements to the <select> element
-        carlist = '';
+        carlist = '<p1>The following list is in the format: carModel, carMake, co2Emission</p1><br>';
         for (var k = 0; k<cars.length; k++) {
             var car = cars[k];
-            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.fuel_consumption + '</a>' + '<br>';
+            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + ", " + car.make + ", " + car.fuel_consumption + '</a>' + '<br>';
         }
         // change car.make to linksID, change query to include linksID, 
         // in app.route/hello/<linksID> go to database to get data to render template
