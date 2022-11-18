@@ -63,17 +63,62 @@ def get_car_co2 ():
         cursor.execute(query)
         print(cursor.query)
         for row in cursor:
-            people = {'model':row[0],
+            car = {'model':row[0],
                       'make':row[1],
                       'co2_emission':row[2],
                       'linksID':row[3]}
-            car_co2_list.append(people)
+            car_co2_list.append(car)
         cursor.close()
         connection.close()
     except Exception as e:
         print(e, file=sys.stderr)
 
     return json.dumps(car_co2_list)
+
+@api.route('/engine_size/') 
+def get_car_engine ():
+    query = '''SELECT modeltable.model, modeltable.make, modeltable.engine_size, linkstable.linkid
+                FROM modeltable, linkstable, co2table
+                WHERE modeltable.id = linkstable.modelID
+                ORDER BY modeltable.engine_size
+                LIMIT 20; '''
+    car_engine_list = []
+    try:
+        connection = get_connection()
+        cursor = connection.cursor() 
+        cursor.execute(query)
+        print(cursor.query)
+        for row in cursor:
+            car = {'model':row[0],
+                      'make':row[1],
+                      'engine_size':row[2],
+                      'linksID':row[3]}
+            car_engine_list.append(car)
+        cursor.close()
+        connection.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
+
+    return json.dumps(car_engine_list)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @api.route('/search/<make>')
 def search_cars_for_make(make):
@@ -82,7 +127,7 @@ def search_cars_for_make(make):
                 WHERE modeltable.make ILIKE CONCAT('%%', %s, '%%')
                 AND modeltable.id = linkstable.modelID
                 AND fueltable.id = linkstable.fuelID
-                LIMIT 10;'''
+                LIMIT 20;'''
     car_list = []
     try:
         connection = get_connection()

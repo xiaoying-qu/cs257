@@ -35,10 +35,11 @@ function showCars() {
     // an HTML table displaying the author names and lifespan.
     .then(function(cars) {
         // Add the <option> elements to the <select> element
-        carlist = '';
+        carlist = '<p1>The following list is in the format: carModel, carMake, co2Emission</p1><br>';
         for (var k = 0; k<cars.length; k++) {
             var car = cars[k];
-            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.co2_emission + '</a>' + '<br>';
+            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + ', ' + car.make + ', ' + car.co2 + '<td>' + '</tr>' + '<br>';
+            // carlist += '<tr href="/api/hello/' + car.linksID + '">' + '<td>' + car.model + '</td><td>' + car.make + '</td><td>' + car.co2 + '</td>' + '</tr>'
         }
         var carlist_by_make = document.getElementById("carlist_by_make")
         carlist_by_make.innerHTML = carlist;

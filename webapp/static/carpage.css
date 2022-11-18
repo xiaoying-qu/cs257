@@ -10,12 +10,12 @@
 
 p {
     color: white;
-}
-h1{
-    color: white;
+    font-size: larger;
 }
 h2 {
     color: white;
+    font-size: 50px;
+    padding: 20px, 5px;
 }
 ul{
     color: white;
@@ -26,7 +26,7 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 5%;
-    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/cars.jpg);
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
     background-position: center;
     background-size: cover;
 }

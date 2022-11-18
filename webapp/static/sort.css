@@ -15,15 +15,22 @@
 
 /* HEADINGS AND PARAGRAPHS */
 
+
+a {
+    color: white;
+    font-size: larger;
+}
+
 p {
     color: white;
+    font-size: larger;
 }
 
 h2 {
     color: white;
+    font-size: 50px;
+    padding: 20px, 5px;
 }
-
-
 
 
 
@@ -33,7 +40,7 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 5%;
-    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/cars.jpg);
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -60,7 +67,7 @@ body {
     /* width: 105px; */
     /* padding: 0.1px 40px; */
     font-size: 14px;
-    background-color: rgb(38, 0, 255);
+    background-color: rgba(8, 143, 26, 0.528);
     word-wrap: break-word;
 }
 .container1 li a{
