@@ -5,12 +5,25 @@
 
 /* HEADINGS AND PARAGRAPHS */
 
-p {
+/* p {
     color: rgb(6, 115, 35);
 }
 
 h2 {
     color: rgb(6, 115, 35);
+} */
+
+
+p {
+    color: white;
+    font-size: larger;
+}
+
+
+h2 {
+    color: white;
+    font-size: 50px;
+    padding: 20px, 5px;
 }
 
 /* .logo {
@@ -76,10 +89,9 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 5%;
-    background-color: rgba(0,8,51,0.9);
     background-position: center;
     background-size: cover;
-    /* background-image: url(/cars.jpg); */
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
 }
 
 .logo{ 
