@@ -16,9 +16,6 @@ def get_connection():
                             user=config.user,
                             password=config.password)
 
-@api.route('/help')
-def get_help():
-    return flask.send_file('.' + flask.url_for('static', filename='api-design.txt'), mimetype='text')
 
 
 @api.route('/fuel_consumption/') 
@@ -29,7 +26,7 @@ def get_car_fuel ():
                 AND fueltable.id = linkstable.modelID
                 ORDER BY fueltable.consumption_comb
                 LIMIT 20; '''
-    car_fuel_list = []
+    car_fuel_list = [] 
     try:
         connection = get_connection()
         cursor = connection.cursor() 
@@ -78,8 +75,8 @@ def get_car_co2 ():
 @api.route('/engine_size/') 
 def get_car_engine ():
     query = '''SELECT modeltable.model, modeltable.make, modeltable.engine_size, linkstable.linkid
-                FROM modeltable, linkstable, co2table
-                WHERE modeltable.id = linkstable.modelID
+                FROM modeltable, linkstable
+                WHERE linkstable.modelID = modeltable.id
                 ORDER BY modeltable.engine_size
                 LIMIT 20; '''
     car_engine_list = []
@@ -102,32 +99,13 @@ def get_car_engine ():
     return json.dumps(car_engine_list)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @api.route('/search/<make>')
 def search_cars_for_make(make):
     query = '''SELECT modeltable.model, modeltable.make, fueltable.consumption_comb, linkstable.linkid
                 FROM modeltable, fueltable, linkstable
-                WHERE modeltable.make ILIKE CONCAT('%%', %s, '%%')
+                WHERE modeltable.model ILIKE CONCAT('%%', %s, '%%')
                 AND modeltable.id = linkstable.modelID
-                AND fueltable.id = linkstable.fuelID
-                LIMIT 20;'''
+                AND fueltable.id = linkstable.fuelID;'''
     car_list = []
     try:
         connection = get_connection()
@@ -169,7 +147,7 @@ def get_cars_detail(linksID):
         print(e, file=sys.stderr)
     return flask.render_template('carpage.html', model=car[0], make=car[1], carClass=car[2], 
                                     engine=car[3], cylinder=car[4], fueltype=car[5], 
-                                    fuelConsumption=car[6], co2emission=car[7], 
+                                    fuelConsumption=car[6], co2Emission=car[7], 
                                     co2Rating=car[8], smogRating=car[9])
 # @api.route('/hello/<make>')
 # def hello(make):
