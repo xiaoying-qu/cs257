@@ -26,11 +26,14 @@ h2 {
     padding: 20px, 5px;
 }
 
-/* .logo {
-    position: relative;
-    margin-top: 80px;
-    margin-left: 60px;
-} */
+
+a {
+    color: white;
+    font-size: x-large;
+    /* background-color: rgb(25, 140, 71); */
+}
+
+
 .container{
     width: 80%;
     size-adjust: auto;
