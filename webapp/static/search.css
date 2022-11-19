@@ -1,50 +1,30 @@
 /* CS257 mockup */
 /* Written by Yiming Xia and Xiaoying Qu */
-/* 11.3.2022 */
-
-
-
-
+/* 11.18.2022 */
 
 /* ALL */
 
 * {
     margin: 0;
     padding: 0;
+    font-size:x-large;
 }
 
-/* HEADINGS AND PARAGRAPHS */
-
-/* p {
-    color: white;
-} */
-
-p1 {
-    color: white;
-    font-size: larger;
+p {
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+    color: rgb(25, 140, 71);
+    font-size: x-large;
 }
-
 
 h2 {
-    color: white;
-    font-size: 50px;
+    color: rgb(25, 140, 71);
+    font-size: 45px;
     padding: 20px, 5px;
 }
 
-
-
-
-
 /* BACKGROUND */
 
-body {
-    width: 100%;
-    min-height: 100vh;
-    padding: 5%;
-    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
-    background-position: center;
-    background-size: cover;
-}
 
 
 
@@ -53,6 +33,7 @@ body {
 /* SEARCH_BAR */
 
 .search-bar {
+    margin-top: 30px;
     width: 100%;
     max-width: 700px;
     background: rgba(8, 143, 26, 0.528);
@@ -79,7 +60,7 @@ body {
 }
 
 .search-bar button img {
-    width: 10px;
+    width: 30px;
     float: right;
 }
 
@@ -88,7 +69,6 @@ body {
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    background: #58629b;
     cursor: pointer;
     float: right;
 }
@@ -117,10 +97,22 @@ table, th {
     /* border: 1px solid white; */
 }
 
-
-
-
 /* NAVBAR */
+
+/* .logo {
+    position: relative;
+    margin-top: 80px;
+    margin-left: 60px;
+} */
+.container{
+    width: 80%;
+    size-adjust: auto;
+    margin: 3 auto;
+    /* background-image: url(/cars.jpg); */
+}
+
+
+
 header::after{
     content: '';
     display: table;
@@ -128,9 +120,11 @@ header::after{
 }
 nav{
     text-align:center;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     color:aliceblue;
     font-size: large;
+    overflow: auto;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -150,16 +144,50 @@ nav{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color:rgb(25, 140, 71);
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #ffffff;
+    background-color: aliceblue;
     color: rgb(25, 140, 71);
   }
 
 nav a{
     text-decoration: none;
 }
+
+/* BACKGROUND 
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+*/
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+}
+
+#backgroundimage {
+    background-image: url(images/car.jpg);
+        margin-top: -50px;
+        margin-left: 60px;
+        width: 30vw;
+        height: 45vh; 
+        background-repeat: no-repeat;
+        display: block;
+        position: relative;
+        float:right;
+        background-position:center;
+        background-size:cover;
+        } 

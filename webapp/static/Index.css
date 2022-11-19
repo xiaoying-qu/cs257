@@ -1,38 +1,29 @@
 /* CS257 mockup */
 /* Written by Yiming Xia and Xiaoying Qu */
-/* 11.3.2022 */
+/* 11.18.2022 */
 
 
-/* HEADINGS AND PARAGRAPHS */
+/* ALL */
 
-/* p {
-    color: rgb(6, 115, 35);
+* {
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
 }
-
-h2 {
-    color: rgb(6, 115, 35);
-} */
-
 
 p {
-    color: white;
-    font-size: larger;
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+    color: rgb(25, 140, 71);
+    font-size: x-large;
 }
 
 
 h2 {
-    color: white;
-    font-size: 50px;
+    color: rgb(25, 140, 71);
+    font-size: 45px;
     padding: 20px, 5px;
 }
-
-
-a {
-    color: white;
-    font-size: x-large;
-    /* background-color: rgb(25, 140, 71); */
-}
-
 
 .container{
     width: 80%;
@@ -41,7 +32,7 @@ a {
     /* background-image: url(/cars.jpg); */
 }
 
-
+/* NAVBAR */
 
 header::after{
     content: '';
@@ -50,13 +41,16 @@ header::after{
 }
 nav{
     text-align:center;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     color:aliceblue;
     font-size: large;
+    overflow: auto;
+
 }
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: rgb(25, 140, 71);
+    background-color:rgb(25, 140, 71);
     overflow: hidden;
   }
   
@@ -72,13 +66,13 @@ nav{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(25, 140, 71);
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #ffffff;
+    background-color: aliceblue;
     color: rgb(25, 140, 71);
   }
 
@@ -88,17 +82,21 @@ nav a{
 /* BACKGROUND */
 
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     min-height: 100vh;
     padding: 5%;
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
+   /* background-image: linear-gradient(rgba(176, 218, 193, 0.9), rgba(176, 218, 193, 0.9)), url(images/car.jpg);*/
+ 
 }
-
-.logo{ 
-	position:fixed; 
-	top:0; 
-	left:0; 
-} 
+#backgroundimage {
+    background-image: url(images/car.jpg);
+        margin-top: -50px;
+        margin-left: 120px;
+        width: 85vw;
+        height: 90vh; 
+        background-repeat: no-repeat;
+        display: block;
+        position: relative;
+        background-position:center;
+        background-size:cover;
+        } 

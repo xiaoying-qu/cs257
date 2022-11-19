@@ -11,6 +11,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: x-large;
 }
 
 /* HEADINGS AND PARAGRAPHS */
@@ -22,19 +23,21 @@ a {
 }
 
 p {
-    color: white;
-    font-size: larger;
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+    color: rgb(25, 140, 71);
+    font-size: x-large;
 }
 
 h2 {
-    color: white;
-    font-size: 50px;
+    color: rgb(25, 140, 71);
+    font-size: 45px;
     padding: 20px, 5px;
 }
 
 
 
-/* BACKGROUND */
+/* BACKGROUND
 
 body {
     width: 100%;
@@ -44,8 +47,26 @@ body {
     background-position: center;
     background-size: cover;
 }
-
-
+*/
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+   /* background-image: linear-gradient(rgba(176, 218, 193, 0.9), rgba(176, 218, 193, 0.9)), url(images/car.jpg);*/
+ 
+}
+#backgroundimage {
+    background-image: url(images/car.jpg);
+        margin-top: -50px;
+        margin-left: 120px;
+        width: 85vw;
+        height: 90vh; 
+        background-repeat: no-repeat;
+        display: block;
+        position: relative;
+        background-position:center;
+        background-size:cover;
+        } 
 
 
 
@@ -82,21 +103,21 @@ body {
 
 /* CARLIST */
 
-.container2 {
-    float: left;
-    width: 100%;
-    /* background-color: rgb(1, 255, 60); */
-    height:600px;
-    width: 400px;
-    /* border: 1px solid white; */
+.container{
+    width: 80%;
+    size-adjust: auto;
+    margin: 3 auto;
+    /* background-image: url(/cars.jpg); */
 }
 
-
-
-
-
-
 /* NAVBAR */
+
+/* .logo {
+    position: relative;
+    margin-top: 80px;
+    margin-left: 60px;
+} */
+
 header::after{
     content: '';
     display: table;
@@ -104,9 +125,11 @@ header::after{
 }
 nav{
     text-align:center;
-    margin-top: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     color:aliceblue;
     font-size: large;
+    overflow: auto;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -117,7 +140,7 @@ nav{
   /* Style the links inside the navigation bar */
   .topnav a {
     float: right;
-    color: #f2f2f2;
+    color: aliceblue;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -126,16 +149,19 @@ nav{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: rgb(25, 140, 71);
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: #ffffff;
+    background-color: aliceblue;
     color: rgb(25, 140, 71);
   }
 
 nav a{
     text-decoration: none;
 }
+
+
+
