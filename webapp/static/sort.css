@@ -82,19 +82,20 @@ body {
 .container1 li {
     float: left;
     list-style: none;
+    margin-top: 5pt;
+    margin-bottom: 5pt;
     position: relative;
     left: 0px;
     line-height: 10px;
     /* width: 105px; */
     /* padding: 0.1px 40px; */
     font-size: 14px;
-    background-color: rgba(8, 143, 26, 0.528);
     word-wrap: break-word;
 }
 .container1 li a{
     display: block;
     padding: 12px 1px;
-    color: white;
+    color: royalblue;
 }
 
 
