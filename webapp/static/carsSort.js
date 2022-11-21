@@ -9,10 +9,8 @@ function initialize() {
     fuelbutton.onclick = showFuelCars;
     var co2button = document.getElementById("co2_emission");
     co2button.onclick = showCo2Cars;
-    var enginebutton = document.getElementById("engine_size");
-    enginebutton.onclick = showEngineCars;
-    var smogbutton = document.getElementById("smog_rating");
-    smogbutton.onclick = showSmogCars;
+    var co2button = document.getElementById("engine_size");
+    co2button.onclick = showEngineCars;
 }
 
 // Returns the base URL of the API, onto which endpoint
@@ -28,7 +26,7 @@ function getAPIBaseURL() {
 function showFuelCars() {
     let url = getAPIBaseURL() + '/fuel_consumption/';
 
-    // Send the request to the books API /authors/ endpoint
+    // Send the request to the books API / endpoint
     fetch(url, {method: 'get'})
 
     // When the results come back, transform them from a JSON string into
@@ -39,10 +37,10 @@ function showFuelCars() {
     // an HTML table displaying the author names and lifespan.
     .then(function(cars) {
         // Add the <option> elements to the <select> element
-        carlist = '<p1>The following list is in the format: carModel, carMake, co2Emission</p1><br>';
+        carlist = '';
         for (var k = 0; k<cars.length; k++) {
             var car = cars[k];
-            carlist += '<a href="/greencars/' +  car.linksID + '">' + car.model + ", " + car.make + ", " + car.fuel_consumption + '</a>' + '<br>';
+            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + ", " + car.make + ", " + car.fuel_consumption + '</a>' + '<br>';
         }
         // change car.make to linksID, change query to include linksID, 
         // in app.route/hello/<linksID> go to database to get data to render template
@@ -60,7 +58,7 @@ function showFuelCars() {
 function showCo2Cars() {
     let url = getAPIBaseURL() + '/co2_emission/';
 
-    // Send the request to the books API /authors/ endpoint
+    // Send the request to the books API / endpoint
     fetch(url, {method: 'get'})
 
     // When the results come back, transform them from a JSON string into
@@ -74,7 +72,7 @@ function showCo2Cars() {
         carlist = '';
         for (var k = 0; k<cars.length; k++) {
             var car = cars[k];
-            carlist += '<a href="/greencars/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.co2_emission + '</a>' + '<br>';
+            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.co2_emission + '</a>' + '<br>';
         }
         // change car.make to linksID, change query to include linksID, 
         // in app.route/hello/<linksID> go to database to get data to render template
@@ -88,35 +86,11 @@ function showCo2Cars() {
     });
 }
 
-function showSmogCars(){
-    let url = getAPIBaseURL()+'/smog_rating/';
 
-    fetch(url,{method: 'get'})
-
-    .then((response) => response.json())
-
-    .then(function(cars) {
-        carlist = '';
-        for (var k = 0; k<cars.length; k++) {
-            var car = cars[k];
-            carlist += '<a href="/greencars/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.smog_rating + '</a>' + '<br>';
-        }
-        // change car.make to linksID, change query to include linksID, 
-        // in app.route/hello/<linksID> go to database to get data to render template
-        var car_fuel_list = document.getElementById("car_list")
-        car_fuel_list.innerHTML = carlist;
-    })
-
-    // Log the error if anything went wrong during the fetch.
-    .catch(function(error) {
-        console.log(error);
-    });
-
-}
 function showEngineCars() {
     let url = getAPIBaseURL() + '/engine_size/';
 
-    // Send the request to the books API /authors/ endpoint
+    // Send the request to the books API / endpoint
     fetch(url, {method: 'get'})
 
     // When the results come back, transform them from a JSON string into
@@ -130,7 +104,7 @@ function showEngineCars() {
         carlist = '';
         for (var k = 0; k<cars.length; k++) {
             var car = cars[k];
-            carlist += '<a href="/greencars/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.engine_size + '</a>' + '<br>';
+            carlist += '<a href="/api/hello/' +  car.linksID + '">' + car.model + "     " + car.make + "     " + car.engine_size + '</a>' + '<br>';
         }
         // change car.make to linksID, change query to include linksID, 
         // in app.route/hello/<linksID> go to database to get data to render template

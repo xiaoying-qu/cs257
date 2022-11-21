@@ -24,7 +24,7 @@ function showCars() {
     let searchString = document.getElementById("searchString").value;
     let url = getAPIBaseURL() + '/search/' + searchString;
 
-    // Send the request to the books API /authors/ endpoint
+    // Send the request to the books API / endpoint
     fetch(url, {method: 'get'})
 
     // When the results come back, transform them from a JSON string into

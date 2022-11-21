@@ -11,11 +11,13 @@
 * {
     margin: 0;
     padding: 0;
-    font-size: x-large;
 }
 
-/* HEADINGS AND PARAGRAPHS */
 
+
+
+
+/* HEADINGS AND PARAGRAPHS */
 
 a {
     color: white;
@@ -23,21 +25,21 @@ a {
 }
 
 p {
-    margin-top: 1em ;
-    margin-bottom: 1em ;
-    color: rgb(25, 140, 71);
-    font-size: x-large;
+    color: white;
+    font-size: larger;
 }
 
 h2 {
-    color: rgb(25, 140, 71);
-    font-size: 45px;
+    color: white;
+    font-size: 50px;
     padding: 20px, 5px;
 }
 
 
 
-/* BACKGROUND
+
+
+/* BACKGROUND */
 
 body {
     width: 100%;
@@ -47,30 +49,12 @@ body {
     background-position: center;
     background-size: cover;
 }
-*/
-body {
-    width: 100%;
-    min-height: 100vh;
-    padding: 5%;
-   /* background-image: linear-gradient(rgba(176, 218, 193, 0.9), rgba(176, 218, 193, 0.9)), url(images/car.jpg);*/
- 
-}
-#backgroundimage {
-    background-image: url(images/car.jpg);
-        margin-top: -50px;
-        margin-left: 120px;
-        width: 85vw;
-        height: 90vh; 
-        background-repeat: no-repeat;
-        display: block;
-        position: relative;
-        background-position:center;
-        background-size:cover;
-        } 
 
 
 
-/* DROP_DOWN_MENU */
+
+
+/* SORT_PARAMETERS */
 
 .container1 {
     float: left;
@@ -82,20 +66,19 @@ body {
 .container1 li {
     float: left;
     list-style: none;
-    margin-top: 5pt;
-    margin-bottom: 5pt;
     position: relative;
     left: 0px;
     line-height: 10px;
     /* width: 105px; */
     /* padding: 0.1px 40px; */
     font-size: 14px;
+    background-color: rgba(8, 143, 26, 0.528);
     word-wrap: break-word;
 }
 .container1 li a{
     display: block;
     padding: 12px 1px;
-    color: royalblue;
+    color: white;
 }
 
 
@@ -104,21 +87,21 @@ body {
 
 /* CARLIST */
 
-.container{
-    width: 80%;
-    size-adjust: auto;
-    margin: 3 auto;
-    /* background-image: url(/cars.jpg); */
+.container2 {
+    float: left;
+    width: 100%;
+    /* background-color: rgb(1, 255, 60); */
+    height:600px;
+    width: 400px;
+    /* border: 1px solid white; */
 }
 
+
+
+
+
+
 /* NAVBAR */
-
-/* .logo {
-    position: relative;
-    margin-top: 80px;
-    margin-left: 60px;
-} */
-
 header::after{
     content: '';
     display: table;
@@ -126,11 +109,9 @@ header::after{
 }
 nav{
     text-align:center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
     color:aliceblue;
     font-size: large;
-    overflow: auto;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -141,7 +122,7 @@ nav{
   /* Style the links inside the navigation bar */
   .topnav a {
     float: right;
-    color: aliceblue;
+    color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -150,19 +131,16 @@ nav{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: rgb(25, 140, 71);
+    background-color: #ddd;
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: aliceblue;
+    background-color: #ffffff;
     color: rgb(25, 140, 71);
   }
 
 nav a{
     text-decoration: none;
 }
-
-
-

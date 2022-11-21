@@ -1,8 +1,12 @@
 AUTHORS: Yiming Xia and Xiaoying Qu
 
-DATA: different properties of car models, focusing on fuel and co2.
+DATA: different properties of car models, can sort by fuel and co2 and engine size.
 
-FEATURES CURRENTLY WORKING:
+our data comes from kraggle.com (https://www.kaggle.com/datasets/rinichristy/2022-fuel-consumption-ratings)
+
+STATUS:
+
+working:
 - working html pages with css
 - href between home page to serach page and sort page
 - connection to database
@@ -11,8 +15,8 @@ FEATURES CURRENTLY WORKING:
 - carpage gets data from database to display to user
 - the list sort page and sort page displays directs user to carpage
 
-FEATURES NOT YET WORKING:
-- make webpages look better
-- nav bar on all web pages, so that the user can return to home page
+not-yet-implemented-but-would-like-to-if-we-have-more-time-features:
 - sort with multiple parameters
-- add more sort parameters
+- allow user to choose how many lines of data they want to display on their screen in the sort page.
+
+NOTES: no notes, but thanks professor for all your help this term

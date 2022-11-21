@@ -140,6 +140,7 @@ def get_cars_detail(linksID):
             # car = {'model':row[0], 'make':row[1], 'carClass':row[2], 'engine':row[3], 
             #     'cylinder':row[4], 'fueltype':row[5], 'fuelConsumption':row[6], 
             #     'co2Emission':row[7], 'co2Rating':row[8], 'smogRating':row[9]}
+            # can't get the right element with dictionary...
             car = [row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9]]
         cursor.close()
         connection.close()
@@ -149,6 +150,7 @@ def get_cars_detail(linksID):
                                     engine=car[3], cylinder=car[4], fueltype=car[5], 
                                     fuelConsumption=car[6], co2Emission=car[7], 
                                     co2Rating=car[8], smogRating=car[9])
-# @api.route('/hello/<make>')
-# def hello(make):
-#     return flask.render_template('carpage.html', body = make)
+
+@api.route('/help')
+def get_help():
+    return flask.send_file('.' + flask.url_for('static', filename='api-design.txt'), mimetype='text')

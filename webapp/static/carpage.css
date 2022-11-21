@@ -5,32 +5,16 @@
 
 
 /* HEADINGS AND PARAGRAPHS */
-* {
-  margin: 0;
-  padding: 0;
-  font-size:x-large;
-}
-
 
 p {
-    margin-top: 1em ;
-    margin-bottom: 1em ;
-    color: rgb(25, 140, 71);
-    font-size: x-large;
+    color: white;
+    font-size: larger;
 }
 h2 {
-    color: rgb(25, 140, 71);
-    font-size: 45px;
+    color: white;
+    font-size: 50px;
     padding: 20px, 5px;
 }
-
-.container{
-    width: 80%;
-    size-adjust: auto;
-    margin: 3 auto;
-
-}
-
 ul{
     color: white;
     font-size: medium;
@@ -40,6 +24,7 @@ body {
     width: 100%;
     min-height: 100vh;
     padding: 5%;
+    background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9)), url(images/car.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -49,6 +34,7 @@ body {
 
 
 /* NAVBAR */
+
 header::after{
     content: '';
     display: table;
@@ -56,11 +42,9 @@ header::after{
 }
 nav{
     text-align:center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
     color:aliceblue;
     font-size: large;
-    overflow: auto;
 }
 /* Add a black background color to the top navigation */
 .topnav {
@@ -80,13 +64,13 @@ nav{
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color:rgb(25, 140, 71);
+    background-color: #ddd;
     color: black;
   }
   
   /* Add a color to the active/current link */
   .topnav a.active {
-    background-color: aliceblue;
+    background-color: #ffffff;
     color: rgb(25, 140, 71);
   }
 

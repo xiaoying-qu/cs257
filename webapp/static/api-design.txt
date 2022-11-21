@@ -7,45 +7,27 @@ GET parameters
     model (Required) -- returns a list of car name with
                         reference link to the specific car model.
                         The input is a string.
-<<<<<<< HEAD:webapp/api-design.txt
-RESPONSE: a JSON list of dictionaries, each of which represents one
-                    vehicle, sorted alphabetically by the vehicle's make.
-
-    make -- (TEXT) the make of the vehicle
-    model -- (TEXT) the model of the vehicle
-    co2 -- (DOUBLE PRECISION) the co2 emission data of the vehicle
-    linksID -- (INTEGER) linkID of car model table to other table in the database
-
-EXAMPLE:
-    /search/LX
-
-    
-
-EXAMPLE:
-=======
 RESPONSE: a
->>>>>>> ba10394b11e84c7d47737f8e6dd6825a174fac9d:webapp/static/api-design.txt
 
 REQUEST: /model?model_contains={search_text}
 
 RESPONSE: a JSON dictionary that represents one car model. The dictionary will have the following fields:
-
-    Make -- (TEXT) the make of this car model (brand)	Vehicle_class -- (string) the vehicle class of this car model
-    Engine_size -- (INTEGER) size of engine
-    Cylinder -- (INTEGER) how many cylinder
-    Fuel_type -- (CHAR) X,Z,D,E stands for different types of fuel
-    Fuel_consumption_city -- (INTEGER) fuel consumption in city for this model
-    Fuel_consumption_hwy -- (INTEGER) fuel consumption on highway for this model
-    Fuel_consumption_comb -- (INTEGER) total fuel consumption for this model
-    Co2_rating -- (INTEGER) how co2 efficient is this model
-    Smong_rating -- (INTEGER) how smog efficient is this model
+Make -- (string) the make of this car model (brand)	Vehicle_class -- (string) the vehicle class of this car model
+Engine_size -- (int) size of engine
+Cylinder -- (int) how many cylinder
+Fuel_type -- (chr) X,Z,D,E stands for different types of fuel
+Fuel_consumption_city -- (int) fuel consumption in city for this model
+Fuel_consumption_hwy -- (int) fuel consumption on highway for this model
+Fuel_consumption_comb -- (int) total fuel consumption for this model
+Co2_rating -- (int) how co2 efficient is this model
+Smong_rating -- (int) how smog efficient is this model
 
 EXAMPLE: /model?model_contains=MDX
-    {"make": "Acura", "vehicle_class": "SUV:small", "Engine_size": "3.5", "Cylinders": "6", "Fuel_type": "Z", "Fuel_consumption_city": "12.6", "Fuel_consumption_hwy": "9.4", "Fuel_consumption_comb": "11.2", "co2_emission": "263", "co2_rating": "4", "smog_rating": "5"}
+{"make": "Acura", "vehicle_class": "SUV:small", "Engine_size": "3.5", "Cylinders": "6", "Fuel_type": "Z", "Fuel_consumption_city": "12.6", "Fuel_consumption_hwy": "9.4", "Fuel_consumption_comb": "11.2", "co2_emission": "263", "co2_rating": "4", "smog_rating": "5"}
 
 
 
-REQUEST: /sort/fuel_consumption
+REQUEST: /sort/api/fuel_consumption
 RESPONSE: a 20-item list of TEXT of car make and model
             sorted by descending fuel consumption rating
 EXAMPLE:
@@ -72,7 +54,7 @@ EXAMPLE:
         Audi A3 Sedan 40 TFSI quattro 94]
 
 
-REQUEST: sort/co2_emission
+REQUEST: sort/api/co2_emission
 RESPONSE: a 20-item list of TEXT of car make and model
             sorted by descending co2 emission data
 EXAMPLE:
@@ -97,3 +79,7 @@ EXAMPLE:
         Chevrolet Suburban 4WD 5.8
         Chevrolet Suburban 4WD (No Stop-Start) 5.9
         Jeep Cherokee 4X4 Active Drive Lock 6]
+
+
+REQUEST: sort/api/help
+RESPONSE: This txt document

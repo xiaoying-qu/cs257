@@ -15,36 +15,28 @@
       type="text/css"
       href="{{ url_for('static', filename='carpage.css')}}"
     />
-   
+    <title>Document</title>
   </head>
-
   <body>
-    <header>
-    <div class="container">
-    <!-- website_name -->
-    <h2 id="title">HungryCars</h2>
-    <nav>
+    <h2>Hungry Cars</h2>
     <div class="topnav">
       <a href="/">Home</a>
-      <a href="/help">Help</a>
-      <a class="active" href="/sort">Sort</a>
+      <a href="/api/help">Help</a>
+      <a href="/sort">Sort</a>
       <a href="/search">Search</a>
-      </div>
-    </nav>
-  </header>
-</div>
+    </div>
     <!-- <p>{{list}}</p> -->
-    <p id="carAttribute:model">Model: {{model}}</p>
-    <p id="carAttribute:make">Make: {{make}}</p>
-    <p id="carAttribute:class">Class: {{carClass}}</p>
-    <p id="carAttribute:engine">Engine Size: {{engine}}</p>
-    <p id="carAttribute:cylinder">Cylinder: {{cylinder}}</p>
-    <p id="carAttribute:fueltype">Fuel Type: {{fueltype}}</p>
+    <p id="carAttribute:model">model: {{model}}</p>
+    <p id="carAttribute:make">make: {{make}}</p>
+    <p id="carAttribute:class">class: {{carClass}}</p>
+    <p id="carAttribute:engine">engine: {{engine}}</p>
+    <p id="carAttribute:cylinder">cylinder: {{cylinder}}</p>
+    <p id="carAttribute:fueltype">fueltype: {{fueltype}}</p>
     <p id="carAttribute:fuelConsumption">
-      Fuel Consumption: {{fuelConsumption}}
+      fuelConsumption: {{fuelConsumption}}
     </p>
-    <p id="carAttribute:co2Emission">CO2 Emission: {{co2Emission}}</p>
-    <p id="carAttribute:co2Rating">CO2 Rating: {{co2Rating}}</p>
-    <p id="carAttribute:smogRating">Smog Rating: {{smogRating}}</p>
+    <p id="carAttribute:co2Emission">co2Emission: {{co2Emission}}</p>
+    <p id="carAttribute:co2Rating">co2Rating: {{co2Rating}}</p>
+    <p id="carAttribute:smogRating">smogRating: {{smogRating}}</p>
   </body>
 </html>
